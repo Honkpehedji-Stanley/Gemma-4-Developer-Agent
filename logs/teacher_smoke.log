@@ -1,0 +1,312 @@
+/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/features/_feature_decorator.py:72: UserWarning: [EXPERIMENTAL] feature FeatureName.AGENT_CONFIG is enabled.
+  check_feature_enabled()
+/home/stanley-honkpehedji/Téléchargements/gemma4-agent/tools/eval_local.py:142: UserWarning: [EXPERIMENTAL] EventsCompactionConfig: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  events_compaction_config=EventsCompactionConfig(
+Task fastapi_14616 agent timed out.
+Task fastapi_14616 completed without explicit submit_patch call and no working tree modifications.
+⚠️ Model error (InternalServerError: litellm.InternalServerError: InternalServerError: OpenAIException - Invalid response object Traceback (most recent call last):
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/llm_response_utils/convert_dict_to_response.py", line 644, in convert_to_model_response_object
+    tool_calls = choice["message"].get("tool_calls", None)
+                 ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+
+
+received_args={'response_object': {'id': '9e56c789-7be0-4389-ab7d-3e9a9056ca1c', 'choices': [{'finish_reason': 'stop', 'index': 0, 'logprobs': None, 'message': None}], 'created': 1793548697, 'model': 'openai/gpt-oss-120b', 'object': 'chat.completion', 'moderation': None, 'service_tier': None, 'system_fingerprint': None, 'usage': {'completion_tokens': 43, 'prompt_tokens': 2568, 'total_tokens': 2611, 'completion_tokens_details': None, 'prompt_tokens_details': {'audio_tokens': None, 'cache_write_tokens': None, 'cached_tokens': 2567}, 'cost': {'input_tokens_cost_nanodollars': 231120, 'output_tokens_cost_nanodollars': 15480}, 'total_backend_latency_ms': 45720}}, 'model_response_object': ModelResponse(id='chatcmpl-9261d8b6-ec85-46c6-ad24-effaa45af9d9', created=1793548344, model=None, object='chat.completion', system_fingerprint=None, choices=[Choices(finish_reason='stop', index=0, message=Message(content=None, role='assistant', tool_calls=None, function_call=None, provider_specific_fields=None))], usage=Usage(completion_tokens=0, prompt_tokens=0, total_tokens=0, completion_tokens_details=None, prompt_tokens_details=None)), 'response_type': 'completion', 'stream': False, 'start_time': None, 'end_time': None, 'convert_tool_call_to_json_mode': None} LiteLLM Retried: 5 times). Retrying attempt 1/5 in 2.7s...
+Non-retryable error during retry: AuthenticationError: litellm.AuthenticationError: AuthenticationError: OpenAIException - {
+  "code": "",
+  "message": "Authorization failed: expired token",
+  "param": "",
+  "type": "authentication_error"
+} LiteLLM Retried: 5 times
+Error during sandbox execution for task rich_3521
+Traceback (most recent call last):
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/llm_response_utils/convert_dict_to_response.py", line 644, in convert_to_model_response_object
+    tool_calls = choice["message"].get("tool_calls", None)
+                 ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/llms/openai/openai.py", line 960, in acompletion
+    final_response_obj = convert_to_model_response_object(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/llm_response_utils/convert_dict_to_response.py", line 880, in convert_to_model_response_object
+    raise Exception(f"Invalid response object {traceback.format_exc()}\n\nreceived_args={received_args}")
+Exception: Invalid response object Traceback (most recent call last):
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/llm_response_utils/convert_dict_to_response.py", line 644, in convert_to_model_response_object
+    tool_calls = choice["message"].get("tool_calls", None)
+                 ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+
+
+received_args={'response_object': {'id': '9e56c789-7be0-4389-ab7d-3e9a9056ca1c', 'choices': [{'finish_reason': 'stop', 'index': 0, 'logprobs': None, 'message': None}], 'created': 1793548697, 'model': 'openai/gpt-oss-120b', 'object': 'chat.completion', 'moderation': None, 'service_tier': None, 'system_fingerprint': None, 'usage': {'completion_tokens': 43, 'prompt_tokens': 2568, 'total_tokens': 2611, 'completion_tokens_details': None, 'prompt_tokens_details': {'audio_tokens': None, 'cache_write_tokens': None, 'cached_tokens': 2567}, 'cost': {'input_tokens_cost_nanodollars': 231120, 'output_tokens_cost_nanodollars': 15480}, 'total_backend_latency_ms': 45720}}, 'model_response_object': ModelResponse(id='chatcmpl-9261d8b6-ec85-46c6-ad24-effaa45af9d9', created=1793548344, model=None, object='chat.completion', system_fingerprint=None, choices=[Choices(finish_reason='stop', index=0, message=Message(content=None, role='assistant', tool_calls=None, function_call=None, provider_specific_fields=None))], usage=Usage(completion_tokens=0, prompt_tokens=0, total_tokens=0, completion_tokens_details=None, prompt_tokens_details=None)), 'response_type': 'completion', 'stream': False, 'start_time': None, 'end_time': None, 'convert_tool_call_to_json_mode': None}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/main.py", line 649, in acompletion
+    response = await _resolve_dispatched_chat_response(init_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/main.py", line 714, in _resolve_dispatched_chat_response
+    return await pending
+           ^^^^^^^^^^^^^
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/llms/openai/openai.py", line 1006, in acompletion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Invalid response object Traceback (most recent call last):
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/llm_response_utils/convert_dict_to_response.py", line 644, in convert_to_model_response_object
+    tool_calls = choice["message"].get("tool_calls", None)
+                 ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+
+
+received_args={'response_object': {'id': '9e56c789-7be0-4389-ab7d-3e9a9056ca1c', 'choices': [{'finish_reason': 'stop', 'index': 0, 'logprobs': None, 'message': None}], 'created': 1793548697, 'model': 'openai/gpt-oss-120b', 'object': 'chat.completion', 'moderation': None, 'service_tier': None, 'system_fingerprint': None, 'usage': {'completion_tokens': 43, 'prompt_tokens': 2568, 'total_tokens': 2611, 'completion_tokens_details': None, 'prompt_tokens_details': {'audio_tokens': None, 'cache_write_tokens': None, 'cached_tokens': 2567}, 'cost': {'input_tokens_cost_nanodollars': 231120, 'output_tokens_cost_nanodollars': 15480}, 'total_backend_latency_ms': 45720}}, 'model_response_object': ModelResponse(id='chatcmpl-9261d8b6-ec85-46c6-ad24-effaa45af9d9', created=1793548344, model=None, object='chat.completion', system_fingerprint=None, choices=[Choices(finish_reason='stop', index=0, message=Message(content=None, role='assistant', tool_calls=None, function_call=None, provider_specific_fields=None))], usage=Usage(completion_tokens=0, prompt_tokens=0, total_tokens=0, completion_tokens_details=None, prompt_tokens_details=None)), 'response_type': 'completion', 'stream': False, 'start_time': None, 'end_time': None, 'convert_tool_call_to_json_mode': None}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/swegemma/harness/agent_runner.py", line 521, in run_agent_sandbox
+    async for _event in runner.run_async(
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/runners.py", line 613, in run_async
+    async for event in agen:
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/runners.py", line 596, in _run_with_trace
+    async for event in agen:
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/runners.py", line 858, in _exec_with_plugin
+    async for event in agen:
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/runners.py", line 585, in execute
+    async for event in agen:
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/agents/base_agent.py", line 295, in run_async
+    async for event in agen:
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/agents/llm_agent.py", line 488, in _run_async_impl
+    async for event in agen:
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 869, in run_async
+    async for event in agen:
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 946, in _run_one_step_async
+    async for llm_response in agen:
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 1328, in _call_llm_async
+    async for event in agen:
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 1306, in _call_llm_with_tracing
+    async for llm_response in agen:
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 1389, in _run_and_handle_error
+    async for response in agen:
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 418, in _run_and_handle_error
+    raise model_error
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 391, in _run_and_handle_error
+    async for llm_response in agen:
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/models/lite_llm.py", line 2467, in generate_content_async
+    response = await self.llm_client.acompletion(**completion_args)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/models/lite_llm.py", line 513, in acompletion
+    return await acompletion(
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/chat_completions/dispatch.py", line 114, in acompletion
+    return await _ADISPATCH.arun(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/rust_bridge/dispatch.py", line 83, in arun
+    return await python(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/utils.py", line 2160, in wrapper_async
+    raise e
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/utils.py", line 1972, in wrapper_async
+    result = await original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/main.py", line 702, in acompletion
+    raise exception_type(
+          ^^^^^^^^^^^^^^^
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2700, in exception_type
+    raise e  # it's already mapped
+    ^^^^^^^
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2461, in exception_type
+    _map_openai_exception(
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 469, in _map_openai_exception
+    raise InternalServerError(
+litellm.exceptions.InternalServerError: litellm.InternalServerError: InternalServerError: OpenAIException - Invalid response object Traceback (most recent call last):
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/llm_response_utils/convert_dict_to_response.py", line 644, in convert_to_model_response_object
+    tool_calls = choice["message"].get("tool_calls", None)
+                 ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+
+
+received_args={'response_object': {'id': '9e56c789-7be0-4389-ab7d-3e9a9056ca1c', 'choices': [{'finish_reason': 'stop', 'index': 0, 'logprobs': None, 'message': None}], 'created': 1793548697, 'model': 'openai/gpt-oss-120b', 'object': 'chat.completion', 'moderation': None, 'service_tier': None, 'system_fingerprint': None, 'usage': {'completion_tokens': 43, 'prompt_tokens': 2568, 'total_tokens': 2611, 'completion_tokens_details': None, 'prompt_tokens_details': {'audio_tokens': None, 'cache_write_tokens': None, 'cached_tokens': 2567}, 'cost': {'input_tokens_cost_nanodollars': 231120, 'output_tokens_cost_nanodollars': 15480}, 'total_backend_latency_ms': 45720}}, 'model_response_object': ModelResponse(id='chatcmpl-9261d8b6-ec85-46c6-ad24-effaa45af9d9', created=1793548344, model=None, object='chat.completion', system_fingerprint=None, choices=[Choices(finish_reason='stop', index=0, message=Message(content=None, role='assistant', tool_calls=None, function_call=None, provider_specific_fields=None))], usage=Usage(completion_tokens=0, prompt_tokens=0, total_tokens=0, completion_tokens_details=None, prompt_tokens_details=None)), 'response_type': 'completion', 'stream': False, 'start_time': None, 'end_time': None, 'convert_tool_call_to_json_mode': None} LiteLLM Retried: 5 times
+Non-retryable model error: AuthenticationError: litellm.AuthenticationError: AuthenticationError: OpenAIException - {
+  "code": "",
+  "message": "Authorization failed: expired token",
+  "param": "",
+  "type": "authentication_error"
+} LiteLLM Retried: 5 times
+Error during sandbox execution for task rich_3454
+Traceback (most recent call last):
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/llms/openai/openai.py", line 946, in acompletion
+    headers, response = await self.make_openai_chat_completion_request(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/logging_utils.py", line 338, in async_wrapper
+    result: Final = await func(*args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/llms/openai/openai.py", line 503, in make_openai_chat_completion_request
+    raise e
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/llms/openai/openai.py", line 479, in make_openai_chat_completion_request
+    raw_response = await openai_aclient.chat.completions.with_raw_response.create(**data, timeout=timeout)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/openai/_legacy_response.py", line 386, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 2907, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1992, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1777, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': '{\n  "code": "",\n  "message": "Authorization failed: expired token",\n  "param": "",\n  "type": "authentication_error"\n}'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/main.py", line 649, in acompletion
+    response = await _resolve_dispatched_chat_response(init_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/main.py", line 714, in _resolve_dispatched_chat_response
+    return await pending
+           ^^^^^^^^^^^^^
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/llms/openai/openai.py", line 1006, in acompletion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 401 - {'error': {'message': '{\n  "code": "",\n  "message": "Authorization failed: expired token",\n  "param": "",\n  "type": "authentication_error"\n}'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/swegemma/harness/agent_runner.py", line 521, in run_agent_sandbox
+    async for _event in runner.run_async(
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/runners.py", line 613, in run_async
+    async for event in agen:
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/runners.py", line 596, in _run_with_trace
+    async for event in agen:
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/runners.py", line 858, in _exec_with_plugin
+    async for event in agen:
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/runners.py", line 585, in execute
+    async for event in agen:
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/agents/base_agent.py", line 295, in run_async
+    async for event in agen:
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/agents/llm_agent.py", line 488, in _run_async_impl
+    async for event in agen:
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 869, in run_async
+    async for event in agen:
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 946, in _run_one_step_async
+    async for llm_response in agen:
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 1328, in _call_llm_async
+    async for event in agen:
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 1306, in _call_llm_with_tracing
+    async for llm_response in agen:
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 1389, in _run_and_handle_error
+    async for response in agen:
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 418, in _run_and_handle_error
+    raise model_error
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 391, in _run_and_handle_error
+    async for llm_response in agen:
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/models/lite_llm.py", line 2467, in generate_content_async
+    response = await self.llm_client.acompletion(**completion_args)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/google/adk/models/lite_llm.py", line 513, in acompletion
+    return await acompletion(
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/chat_completions/dispatch.py", line 114, in acompletion
+    return await _ADISPATCH.arun(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/rust_bridge/dispatch.py", line 83, in arun
+    return await python(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/utils.py", line 2160, in wrapper_async
+    raise e
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/utils.py", line 1972, in wrapper_async
+    result = await original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/main.py", line 702, in acompletion
+    raise exception_type(
+          ^^^^^^^^^^^^^^^
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2700, in exception_type
+    raise e  # it's already mapped
+    ^^^^^^^
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2461, in exception_type
+    _map_openai_exception(
+  File "/home/stanley-honkpehedji/Téléchargements/gemma4-agent/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 428, in _map_openai_exception
+    raise AuthenticationError(
+litellm.exceptions.AuthenticationError: litellm.AuthenticationError: AuthenticationError: OpenAIException - {
+  "code": "",
+  "message": "Authorization failed: expired token",
+  "param": "",
+  "type": "authentication_error"
+} LiteLLM Retried: 5 times
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+{"mode": "agent", "submission_dir": "submissions/armF", "resolved": 0, "total": 3, "resolution_rate": 0.0}

@@ -1,0 +1,7 @@
+# Budget calibré sur la notation : tâches cachées en série, 12 h pour ~120 tâches, démarrage compris.
+# Mesuré (panel30, 2026-10-08) : 4,3 min par tâche tout compris → 120 tâches ≈ 8,6 h, marge ≈ 3,4 h.
+evaluation:
+  timeout_seconds: 120
+  max_tool_calls: 60
+  max_time_minutes: 4.5
+  max_turns: 80

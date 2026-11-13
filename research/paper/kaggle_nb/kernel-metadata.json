@@ -1,0 +1,15 @@
+{
+ "id": "stanleyhonkpehedji/gemma4-compaction-repro",
+ "title": "gemma4-compaction-repro",
+ "code_file": "compaction-repro.ipynb",
+ "language": "python",
+ "kernel_type": "notebook",
+ "is_private": false,
+ "enable_gpu": false,
+ "enable_internet": false,
+ "dataset_sources": [
+  "stanleyhonkpehedji/gemma4-agent-compaction-traces"
+ ],
+ "competition_sources": [],
+ "kernel_sources": []
+}

@@ -1,0 +1,17 @@
+# Environnements et artefacts volumineux (régénérables)
+.venv*/
+build/
+data/
+__pycache__/
+*.pyc
+# Données de la compétition et traces brutes (contenu des tâches, non redistribuable)
+kaggle/runs/
+vendor/wheels*/
+# Notebooks publics d'autres auteurs (copiés pour la veille)
+research/veille/
+research/*_*/
+research/flexonafft/
+# Fichiers temporaires
+research/paper/tmp.*
+research/paper/nbout/
+results/*/

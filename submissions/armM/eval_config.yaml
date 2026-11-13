@@ -1,0 +1,7 @@
+# Budget calibré sur la notation : tâches cachées en série, 12 h pour ~120 tâches, démarrage compris.
+# 120 × (3,5 min d'agent + ~1 min de préparation et tests) ≈ 9,4 h, marge sous les 12 h.
+evaluation:
+  timeout_seconds: 120
+  max_tool_calls: 60
+  max_time_minutes: 4.5
+  max_turns: 80

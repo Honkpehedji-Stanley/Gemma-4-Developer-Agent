@@ -1,0 +1,159 @@
+fastapi_15661: be1cda65a6b82d58 uv.lock 91 paquets, remplacés=[]
+fastapi_15588: 6f9545ba54e433b4 uv.lock 88 paquets, remplacés=[]
+fastapi_15589: 6f9545ba54e433b4 déjà construit
+fastapi_15030: 0bd3d196287efc33 uv.lock 91 paquets, remplacés=[]
+fastapi_14962: ad399cd02c85a9dc uv.lock 84 paquets, remplacés=[]
+fastapi_15280: e2cf1a90911f73c6 uv.lock 92 paquets, remplacés=[]
+fastapi_14964: ad399cd02c85a9dc déjà construit
+fastapi_15023: 0bd3d196287efc33 déjà construit
+fastapi_14986: 8bc51f7bebca39a6 uv.lock 84 paquets, remplacés=[]
+fastapi_14978: 8bc51f7bebca39a6 déjà construit
+requests_7505: 19d48ca350c93a70 résolution datée 46 paquets, remplacés=[]
+requests_7502: 19d48ca350c93a70 déjà construit
+requests_7433: 74ca1996699c94b6 résolution datée 45 paquets, remplacés=[]
+requests_7427: 74ca1996699c94b6 déjà construit
+requests_7315: 2e52877afa73ff43 résolution datée 42 paquets, remplacés=[]
+requests_7328: 2e52877afa73ff43 déjà construit
+requests_7309: 86976e02fd6dd570 résolution datée 42 paquets, remplacés=[]
+requests_7205: 16e038272f39247a résolution datée 42 paquets, remplacés=[]
+rich_4070: d67b640b8372359e poetry.lock 49 paquets, remplacés=[]
+rich_4077: 68740fbafd09c512 poetry.lock 49 paquets, remplacés=[]
+rich_4079: 68740fbafd09c512 déjà construit
+rich_4076: 68740fbafd09c512 déjà construit
+rich_4075: a1476d18d533bba0 poetry.lock 49 paquets, remplacés=[]
+rich_4006: eba70482fa4962b1 poetry.lock 49 paquets, remplacés=[]
+fastapi_14258: 134de388840812ba déjà construit
+fastapi_14851: 47d42435362b3871 uv.lock 82 paquets, remplacés=[]
+fastapi_14873: 134de388840812ba déjà construit
+fastapi_13920: 69e6241e403d9576 uv.lock 82 paquets, remplacés=[]
+fastapi_14794: 69e6241e403d9576 déjà construit
+fastapi_14786: 46cbd3b4a7a4ec0a uv.lock 81 paquets, remplacés=[]
+fastapi_14492: 1a3002f96c17e822 uv.lock 81 paquets, remplacés=[]
+fastapi_14479: 04c06f1649641580 résolution datée 78 paquets, remplacés=[]
+fastapi_14463: 591721a48bce3ec3 résolution datée 83 paquets, remplacés=[]
+fastapi_12942: d6b63967c710c678 résolution datée 82 paquets, remplacés=[]
+fastapi_14099: 7784d705d79825fa résolution datée 82 paquets, remplacés=[]
+fastapi_14609: 83af51faddd54247 résolution datée 84 paquets, remplacés=[]
+fastapi_14372: b72930c954a40eb4 résolution datée 84 paquets, remplacés=[]
+fastapi_14349: efd3ca11ae2afcf3 résolution datée 83 paquets, remplacés=[]
+fastapi_14512: 85ea4db27b087e2d résolution datée 84 paquets, remplacés=[]
+fastapi_14487: 0c6cdc97c9c6a242 résolution datée 84 paquets, remplacés=[]
+fastapi_11355: 277e31c07b66c3a6 résolution datée 84 paquets, remplacés=[]
+fastapi_14485: 0c6cdc97c9c6a242 déjà construit
+fastapi_14482: 0c6cdc97c9c6a242 déjà construit
+fastapi_14306: 277e31c07b66c3a6 déjà construit
+fastapi_14458: 277e31c07b66c3a6 déjà construit
+fastapi_14459: 277e31c07b66c3a6 déjà construit
+fastapi_14448: 277e31c07b66c3a6 déjà construit
+fastapi_14455: 277e31c07b66c3a6 déjà construit
+fastapi_9753: 277e31c07b66c3a6 déjà construit
+fastapi_14430: 277e31c07b66c3a6 déjà construit
+fastapi_5077: 277e31c07b66c3a6 déjà construit
+fastapi_9555: 277e31c07b66c3a6 déjà construit
+fastapi_14361: 277e31c07b66c3a6 déjà construit
+fastapi_13207: 277e31c07b66c3a6 déjà construit
+fastapi_14360: 277e31c07b66c3a6 déjà construit
+fastapi_14356: 277e31c07b66c3a6 déjà construit
+fastapi_5624: 277e31c07b66c3a6 déjà construit
+fastapi_14419: 277e31c07b66c3a6 déjà construit
+fastapi_14301: efd3ca11ae2afcf3 déjà construit
+fastapi_14262: efd3ca11ae2afcf3 déjà construit
+fastapi_14266: efd3ca11ae2afcf3 déjà construit
+fastapi_14246: efd3ca11ae2afcf3 déjà construit
+fastapi_14186: 4b84f300a7444fa9 résolution datée 82 paquets, remplacés=[]
+fastapi_9425: d22512a518afe75a résolution datée 79 paquets, remplacés=[]
+fastapi_13713: 3a6bd33919f5e6c4 résolution datée 79 paquets, remplacés=[]
+fastapi_14077: a4625d230ff710a5 résolution datée 79 paquets, remplacés=[]
+rich_3718: 917959a36e3593dc poetry.lock 51 paquets, remplacés=['asv==0.5.1 -> asv (récente)']
+rich_3934: dd38aef953395492 poetry.lock 49 paquets, remplacés=[]
+rich_3953: 7253cddfaff7c865 poetry.lock 49 paquets, remplacés=[]
+rich_3944: c402f68605faa0e7 poetry.lock 49 paquets, remplacés=[]
+rich_3942: dd38aef953395492 déjà construit
+rich_3938: dd38aef953395492 déjà construit
+rich_3882: dd38aef953395492 déjà construit
+rich_3894: dd38aef953395492 déjà construit
+rich_3935: dd38aef953395492 déjà construit
+rich_3905: dd38aef953395492 déjà construit
+rich_3930: dd38aef953395492 déjà construit
+httpx_3672: 9a6cbfc755f7d096 résolution datée 19 paquets, remplacés=[]
+fastapi_14791: 1a3002f96c17e822 déjà construit
+fastapi_15800: 680456b4dbcf0cfa uv.lock 92 paquets, remplacés=[]
+fastapi_15785: 3c65803c7904079d uv.lock 92 paquets, remplacés=[]
+fastapi_14371: 85ea4db27b087e2d déjà construit
+fastapi_14605: 83af51faddd54247 déjà construit
+fastapi_15763: 1db6e2c8c191a492 uv.lock 92 paquets, remplacés=[]
+fastapi_14583: 04c06f1649641580 déjà construit
+fastapi_15745: 1db6e2c8c191a492 déjà construit
+fastapi_14297: 277e31c07b66c3a6 déjà construit
+fastapi_14303: 277e31c07b66c3a6 déjà construit
+fastapi_13537: 277e31c07b66c3a6 déjà construit
+fastapi_14953: 2ed42ca547e85cb7 uv.lock 84 paquets, remplacés=[]
+fastapi_13786: 277e31c07b66c3a6 déjà construit
+fastapi_14616: 94b93a949cbf088a uv.lock 82 paquets, remplacés=[]
+fastapi_11194: d22512a518afe75a déjà construit
+requests_6757: ÉCHEC résolution impossible :   × Failed to download and build `markupsafe==2.1.5`
+  ╰─▶ The built wheel `markupsafe-2.1.5-cp312-cp312-linux_x86_64.whl` is not
+      compatible with the target Python 3.13 on manylinux x86_64. Consider
+      using `--no-build` to disable building wheels.
+  help: `markupsafe` (v2.1.5) was included because `httpbin` (v0.10.2) depends
+        on `werkzeug` (v3.0.3) which depends on `markupsafe`
+
+requests_6629: ÉCHEC résolution impossible :   × Failed to download and build `markupsafe==2.1.5`
+  ╰─▶ The built wheel `markupsafe-2.1.5-cp312-cp312-linux_x86_64.whl` is not
+      compatible with the target Python 3.13 on manylinux x86_64. Consider
+      using `--no-build` to disable building wheels.
+  help: `markupsafe` (v2.1.5) was included because `httpbin` (v0.10.2) depends
+        on `werkzeug` (v3.0.1) which depends on `markupsafe`
+
+requests_6644: ÉCHEC résolution impossible :   × Failed to download and build `markupsafe==2.1.5`
+  ╰─▶ The built wheel `markupsafe-2.1.5-cp312-cp312-linux_x86_64.whl` is not
+      compatible with the target Python 3.13 on manylinux x86_64. Consider
+      using `--no-build` to disable building wheels.
+  help: `markupsafe` (v2.1.5) was included because `httpbin` (v0.10.2) depends
+        on `werkzeug` (v3.0.1) which depends on `markupsafe`
+
+requests_6589: ÉCHEC résolution impossible :   × Failed to download and build `markupsafe==2.1.5`
+  ╰─▶ The built wheel `markupsafe-2.1.5-cp312-cp312-linux_x86_64.whl` is not
+      compatible with the target Python 3.13 on manylinux x86_64. Consider
+      using `--no-build` to disable building wheels.
+  help: `markupsafe` (v2.1.5) was included because `httpbin` (v0.10.2) depends
+        on `werkzeug` (v3.0.1) which depends on `markupsafe`
+
+requests_6592: ÉCHEC résolution impossible :   × Failed to download and build `markupsafe==2.1.3`
+  ╰─▶ The built wheel `markupsafe-2.1.3-cp312-cp312-linux_x86_64.whl` is not
+      compatible with the target Python 3.13 on manylinux x86_64. Consider
+      using `--no-build` to disable building wheels.
+  help: `markupsafe` (v2.1.3) was included because `httpbin` (v0.10.0) depends
+        on `markupsafe`
+
+rich_3180: bedbbdc61b1b4d33 poetry.lock 50 paquets, remplacés=['asv==0.5.1 -> asv (récente)', 'coverage==7.2.7 -> coverage (récente)', 'pyyaml==6.0.1 -> pyyaml (récente)', 'typed-ast==1.5.5 -> ABSENT']
+rich_3486: cb27192f648b6d6f poetry.lock 55 paquets, remplacés=['asv==0.6.4 -> asv (récente)', 'coverage==7.2.7 -> coverage (date)', 'pywin32==306 -> ABSENT', 'pyyaml==6.0.1 -> pyyaml (date)', 'typed-ast==1.5.5 -> ABSENT']
+rich_3777: 917959a36e3593dc déjà construit
+rich_3468: 5cf9b7f9429117f1 poetry.lock 50 paquets, remplacés=['asv==0.5.1 -> asv (récente)', 'coverage==7.2.7 -> coverage (date)', 'pyyaml==6.0.1 -> pyyaml (date)', 'typed-ast==1.5.5 -> ABSENT']
+rich_3782: 917959a36e3593dc déjà construit
+rich_3772: 917959a36e3593dc déjà construit
+rich_3296: 8e6ba9dc34d3a606 déjà construit
+rich_3675: 5ef4760b7b37c115 poetry.lock 51 paquets, remplacés=['asv==0.5.1 -> asv (récente)']
+rich_3676: 5ef4760b7b37c115 déjà construit
+rich_3518: 38821ead18eb3c71 poetry.lock 51 paquets, remplacés=['asv==0.5.1 -> asv (récente)']
+rich_3535: ef28879625e3e488 poetry.lock 51 paquets, remplacés=['asv==0.5.1 -> asv (récente)']
+rich_3521: 38821ead18eb3c71 déjà construit
+rich_3506: 4ee8c59c65efbb4a poetry.lock 50 paquets, remplacés=['asv==0.5.1 -> asv (récente)', 'coverage==7.2.7 -> coverage (date)', 'pyyaml==6.0.1 -> pyyaml (date)', 'typed-ast==1.5.5 -> ABSENT']
+rich_3480: 4e9de4e384b7beaa poetry.lock 50 paquets, remplacés=['asv==0.5.1 -> asv (récente)', 'coverage==7.2.7 -> coverage (date)', 'pyyaml==6.0.1 -> pyyaml (date)', 'typed-ast==1.5.5 -> ABSENT']
+rich_3472: 5cf9b7f9429117f1 déjà construit
+rich_3454: 5ebdb0ffabfaf6de poetry.lock 50 paquets, remplacés=['asv==0.5.1 -> asv (récente)', 'coverage==7.2.7 -> coverage (date)', 'pyyaml==6.0.1 -> pyyaml (date)', 'typed-ast==1.5.5 -> ABSENT']
+rich_3471: 5cf9b7f9429117f1 déjà construit
+rich_3470: 5cf9b7f9429117f1 déjà construit
+rich_3469: 5cf9b7f9429117f1 déjà construit
+rich_3052: bedbbdc61b1b4d33 déjà construit
+rich_3278: 8e6ba9dc34d3a606 déjà construit
+rich_2943: 8e6ba9dc34d3a606 déjà construit
+rich_2725: 8e6ba9dc34d3a606 déjà construit
+rich_3105: bedbbdc61b1b4d33 déjà construit
+rich_3130: fcbe183f8637bb6d poetry.lock 61 paquets, remplacés=['asv==0.5.1 -> asv (récente)', 'cffi==1.15.1 -> cffi (récente)', 'coverage==7.2.7 -> coverage (récente)', 'pywin32==306 -> ABSENT', 'pyyaml==6.0 -> pyyaml (récente)', 'pyzmq==25.1.0 -> pyzmq (récente)', 'typed-ast==1.5.4 -> ABSENT']
+rich_3043: fbf4da67b881afe4 poetry.lock 61 paquets, remplacés=['asv==0.5.1 -> asv (récente)', 'cffi==1.15.1 -> cffi (récente)', 'coverage==7.2.7 -> coverage (récente)', 'pywin32==306 -> ABSENT', 'pyyaml==6.0 -> pyyaml (récente)', 'pyzmq==25.1.0 -> pyzmq (récente)', 'typed-ast==1.5.4 -> ABSENT']
+rich_3067: 1af9bf826e2a3952 poetry.lock 61 paquets, remplacés=['asv==0.5.1 -> asv (récente)', 'cffi==1.15.1 -> cffi (récente)', 'coverage==7.2.7 -> coverage (récente)', 'pywin32==306 -> ABSENT', 'pyyaml==6.0 -> pyyaml (récente)', 'pyzmq==25.1.0 -> pyzmq (récente)', 'typed-ast==1.5.4 -> ABSENT']
+rich_3006: fbf4da67b881afe4 déjà construit
+rich_3064: fbf4da67b881afe4 déjà construit
+rich_3063: fbf4da67b881afe4 déjà construit
+rich_3061: fbf4da67b881afe4 déjà construit

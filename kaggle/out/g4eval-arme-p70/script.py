@@ -1,0 +1,186 @@
+# Évaluation Gemma 4 Developer Agent sur Kaggle, dans les conditions de la notation.
+# Généré par kaggle/build_kernel.py : ne pas éditer la copie générée, éditer ce modèle.
+#
+# Reprend le montage du notebook officiel (ryanholbrook/getting-started-gemma-4-developer-agent) :
+# roues du wheelhouse, bac à sable `subprocess`, vLLM gemma4 en mode agent.
+# Modes : gold (correctif de référence), empty (aucun correctif), agent (soumission embarquée).
+
+import asyncio
+import base64
+import glob
+import importlib
+import io
+import json
+import os
+import shutil
+import subprocess
+import sys
+import time
+import zipfile
+from pathlib import Path
+
+CONFIG = json.loads(r'''{"mode": "agent", "task_ids": ["fastapi_11194", "fastapi_13537", "fastapi_13920", "fastapi_14258", "fastapi_14301", "fastapi_14306", "fastapi_14372", "fastapi_14419", "fastapi_14448", "fastapi_14458", "fastapi_14463", "fastapi_14479", "fastapi_14487", "fastapi_14492", "fastapi_14616", "fastapi_14786", "fastapi_14794", "fastapi_14873", "fastapi_14986", "fastapi_15280", "fastapi_15588", "fastapi_15589", "fastapi_15661", "fastapi_15800", "fastapi_5077", "fastapi_5624", "fastapi_9425", "fastapi_9555", "fastapi_9753", "rich_2725", "rich_2943", "rich_3006", "rich_3043", "rich_3052", "rich_3061", "rich_3063", "rich_3067", "rich_3105", "rich_3180", "rich_3278", "rich_3454", "rich_3468", "rich_3470", "rich_3471", "rich_3472", "rich_3480", "rich_3506", "rich_3518", "rich_3521", "rich_3535", "rich_3675", "rich_3676", "rich_3718", "rich_3772", "rich_3777", "rich_3882", "rich_3894", "rich_3905", "rich_3930", "rich_3934", "rich_3935", "rich_3938", "rich_3942", "rich_3944", "rich_3953", "rich_4006", "rich_4075", "rich_4076", "rich_4077", "rich_4079"], "concurrency": 1, "submission": "submissions/armE"}''')
+SUBMISSION_ZIP_B64 = '''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'''
+
+os.environ['LITELLM_LOCAL_MODEL_COST_MAP'] = 'True'
+os.environ['TRANSFORMERS_NO_TF'] = '1'
+os.environ['VLLM_WORKER_MULTIPROC_METHOD'] = 'spawn'
+os.environ['VLLM_MEMORY_PROFILER_ESTIMATE_CUDAGRAPHS'] = '1'
+os.environ['VLLM_ENGINE_READY_TIMEOUT_S'] = '1200'
+os.environ['VLLM_NO_USAGE_STATS'] = '1'
+os.environ['OTEL_SDK_DISABLED'] = 'true'
+os.environ['PYTORCH_CUDA_ALLOC_CONF'] = 'expandable_segments:True'
+
+T0 = time.time()
+WORKING_DIR = Path('/kaggle/working')
+RESULTS_DIR = WORKING_DIR / 'results'
+
+
+def find_dir(candidates, marker):
+    # `marker` est un motif glob : les versions des roues changent quand Kaggle met le harnais à jour.
+    for c in candidates:
+        if any(Path(c).glob(marker)):
+            return Path(c)
+    for p in Path('/kaggle/input').rglob(marker):
+        return p.parent
+    raise FileNotFoundError(marker)
+
+
+DATA_DIR = find_dir(['/kaggle/input/competitions/gemma-4-developer-agent',
+                     '/kaggle/input/gemma-4-developer-agent'], 'tasks.jsonl')
+WHEELHOUSE_DIR = find_dir(['/kaggle/input/datasets/metric/gemma-4-developer-agent-wheelhouse',
+                           '/kaggle/input/gemma-4-developer-agent-wheelhouse'], 'swegemma-*.whl')
+print('data:', DATA_DIR, '| wheelhouse:', WHEELHOUSE_DIR, flush=True)
+
+# --- 1. Roues du harnais (identique au notebook officiel) -------------------------------------
+for pth in glob.glob('/usr/local/lib/python*/dist-packages/*cutlass*.pth') + glob.glob(
+        '/usr/local/lib/python*/site-packages/*cutlass*.pth'):
+    try:
+        os.unlink(pth)
+    except OSError:
+        pass
+tmp_whl = Path('/tmp/wheelhouse')
+tmp_whl.mkdir(parents=True, exist_ok=True)
+for w in WHEELHOUSE_DIR.glob('*.whl'):
+    if 'cutlass' in w.name.lower():
+        continue
+    if CONFIG['mode'] != 'agent' and any(k in w.name.lower() for k in ('vllm', 'torch', 'flashinfer', 'xformers', 'triton')):
+        continue  # inutile sans GPU
+    name = w.name.replace('cu128', '+cu128') if ('cu128' in w.name and '+' not in w.name) else w.name
+    if not (tmp_whl / name).exists():
+        os.symlink(w, tmp_whl / name)
+subprocess.run([sys.executable, '-m', 'pip', 'install', '-q', '--no-deps', '--force-reinstall',
+                *sorted(str(w) for w in tmp_whl.glob('*.whl'))], check=True)
+importlib.invalidate_caches()
+print(f'roues installées ({time.time() - T0:.0f}s)', flush=True)
+
+# --- 2. Soumission ------------------------------------------------------------------------------
+AGENT_DIR = WORKING_DIR / 'submission'
+shutil.rmtree(AGENT_DIR, ignore_errors=True)
+if SUBMISSION_ZIP_B64.strip():
+    with zipfile.ZipFile(io.BytesIO(base64.b64decode(SUBMISSION_ZIP_B64))) as zf:
+        zf.extractall(AGENT_DIR)
+else:
+    shutil.copytree(DATA_DIR / 'sample_submission', AGENT_DIR)
+
+import litellm  # noqa: E402
+import yaml  # noqa: E402
+from google.adk.agents.context_cache_config import ContextCacheConfig  # noqa: E402
+from google.adk.apps._configs import EventsCompactionConfig  # noqa: E402
+from swegemma.config import EvalConfig, build_submission_limits  # noqa: E402
+from swegemma.evaluate import Evaluator  # noqa: E402
+
+litellm.drop_params = True
+
+# --- 3. Modèle (mode agent seulement) ----------------------------------------------------------
+adapters = None
+server = None
+if CONFIG['mode'] == 'agent':
+    import torch
+    from adk_submission import VllmConfig, VllmServer, discover_adapters
+    from swegemma.config import ALLOWED_ADAPTER_EXTENSIONS
+    # swegemma >= 0.2.11 : validate_single_declared_model a disparu ; la découverte est dans adk_submission.
+    from adk_submission.discovery import discover_declared_models
+
+    model_path = find_dir(['/kaggle/input/models/google/gemma-4/other/gemma-4-31b-it-qat-w4a16-ct/2'], 'config.json')
+    declared_models = sorted({m.strip().split('/')[-1] for m in discover_declared_models(AGENT_DIR)})
+    assert declared_models == ['gemma-4-31b-it-qat-w4a16-ct'], declared_models
+    declared = declared_models[0]
+    adapters = discover_adapters(str(AGENT_DIR), adapter_extensions=ALLOWED_ADAPTER_EXTENSIONS)
+    n_gpu = torch.cuda.device_count()
+    turing = torch.cuda.get_device_capability()[0] < 8  # T4 : test seulement, pas les conditions de notation
+    server = VllmServer(VllmConfig(
+        model=str(model_path), port=8000, host='127.0.0.1',
+        tool_call_parser='gemma4', reasoning_parser='gemma4', max_model_len=32768,
+        # Paramètres de notation (HARNESS_README §3.1) : 0.80 et enable_thinking=True.
+        default_chat_template_kwargs={'enable_thinking': True},
+        # T4 : pas de bfloat16 matériel (vLLM refuse), all-reduce maison en panne, 15 Go par carte.
+        dtype='float16' if turing else 'bfloat16',
+        gpu_memory_utilization=0.92 if turing else 0.80,
+        extra_args=['--disable-custom-all-reduce'] if turing else [],
+        enable_auto_tool_choice=True,
+        enable_lora=True, max_loras=8, max_lora_rank=128,
+        tensor_parallel_size=4 if n_gpu >= 4 else (2 if n_gpu >= 2 else 1),
+        startup_timeout=60 * 30,
+    ), adapter_manifest=adapters)
+    server.start()
+    models = server.create_model_registry(aliases=[declared, 'gemma-4-31b-it-qat-w4a16-ct'],
+                                          model_prefix='openai/', api_key='EMPTY')
+    print(f'vLLM prêt sur {n_gpu} GPU ({time.time() - T0:.0f}s)', flush=True)
+else:
+    from adk_submission import ModelRegistry
+    models = ModelRegistry()  # gold / empty : aucun modèle n'est appelé
+
+# --- 4. Évaluation ------------------------------------------------------------------------------
+ev = (yaml.safe_load((AGENT_DIR / 'eval_config.yaml').read_text()) or {}) if (AGENT_DIR / 'eval_config.yaml').exists() else {}
+ev = ev.get('evaluation', ev) or {}
+turns = ev.get('max_turns', ev.get('max_llm_calls'))
+limits, gen_constraints = build_submission_limits()
+config = EvalConfig(
+    tasks_path=DATA_DIR / 'tasks.jsonl',
+    snapshots_dir=DATA_DIR / 'snapshots',
+    results_dir=RESULTS_DIR,
+    submission_dir=AGENT_DIR,
+    models=models,
+    sandbox='subprocess',
+    timeout_seconds=int(ev.get('timeout_seconds', 300)),
+    max_time_minutes=float(ev.get('max_time_minutes', 60.0)),
+    max_tool_calls=int(ev.get('max_tool_calls', 100)),
+    max_turns=int(turns) if turns is not None else None,
+    limits=limits,
+    generation_constraints=gen_constraints,
+    adapter_manifest=adapters,
+    context_cache_config=ContextCacheConfig(min_tokens=2048, ttl_seconds=1800, cache_intervals=10),
+    events_compaction_config=EventsCompactionConfig(compaction_interval=15, overlap_size=2,
+                                                    token_threshold=14336, event_retention_size=5),
+    graph_dir=str(DATA_DIR / 'graphs'),
+    embeddings_dir=str(DATA_DIR / 'embeddings'),
+    wheels_dir=DATA_DIR / 'wheels',
+    task_ids=CONFIG.get('task_ids') or None,
+    skip_agent_patch=(CONFIG['mode'] == 'empty'),
+    concurrency=int(CONFIG.get('concurrency', 1)),
+    display_mode='quiet',
+    verbose=False,
+)
+evaluator = Evaluator(config)
+
+if CONFIG['mode'] == 'gold':
+    from adk_eval_core.tracing import SessionTrace
+
+    async def _gold(task, *a, **kw):
+        return task.patch or '', None, SessionTrace()
+
+    evaluator._run_agent_sandbox = _gold
+
+result = asyncio.run(evaluator.run())
+meta = {'config': CONFIG, 'resolved': result.resolved, 'total': result.total,
+        'resolution_rate': result.resolution_rate, 'seconds': round(time.time() - T0),
+        'python': sys.version}
+(RESULTS_DIR / 'run_meta.json').write_text(json.dumps(meta, indent=2))
+print(json.dumps(meta), flush=True)
+
+# Instantané des paquets de l'environnement, pour comparer avec l'éval locale.
+(RESULTS_DIR / 'pip_freeze.txt').write_text(
+    subprocess.run([sys.executable, '-m', 'pip', 'freeze'], capture_output=True, text=True).stdout)
+if server is not None:
+    server.stop()
